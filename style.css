@@ -5,8 +5,13 @@
     box-sizing: border-box;
 }
 
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in Safari */
+}
+
 /* Set body background to black */
 body {
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in Safari */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: Arial, sans-serif;
     background: url('images/bg3.jpeg') no-repeat center center fixed;
@@ -947,6 +952,16 @@ button:hover, .buy-now-btn:hover, .whitepaper-btn:hover {
 }
 
 @media (max-width: 768px) {
+    h2, h3 {
+        margin-top: 30px; /* Add space above headings */
+        margin-bottom: 20px; /* Add space below headings */
+        text-align: center; /* Optional: Center-align headings for better appearance */
+    }
+
+    .holder-benefits {
+        padding: 20px 15px; /* Adjust padding for mobile view */
+    }
+
     .benefits-container {
         flex-direction: column;
         text-align: center;
@@ -1019,6 +1034,7 @@ button:hover, .buy-now-btn:hover, .whitepaper-btn:hover {
         font-size: 2em;
         text-align: center; /* Center-aligns the heading */
         margin-bottom: 20px; /* Adds spacing below the heading */
+        margin-top: 20px;
     }
 
     .forecast-apart p {
