@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Cast Token</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- JavaScript for the Scroll Button -->
+    <script src="script.js" defer></script>
+
+    <!-- Top Scrolling Text -->
+    <div class="scrolling-text">
+        <p>4Cast Market is launched with azuro protocol! Buy and hold $4Cast when live to qualify for rewards!</p>
+    </div>
+
+<!-- Top Navigation Bar -->
+<header>
+    <nav class="nav-container">
+        <!-- Left Section: Logo -->
+        <div class="logo-brand">
+            <a href="#about">
+                <img src="images/logo_2.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        
+        <!-- Center Section: Navigation Links -->
+        <ul class="nav-links">
+            <a href="#about">About</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#predmarket">Prediction Market</a>
+            <a href="#how-to-buy">How To Buy</a>
+            <a href="#faq">FAQ</a>
+        </ul>
+
+        <!-- Right Section: Social Icons and Buy Now Button -->
+        <div class="right-section">
+            <div class="social-icons">
+                <a href="https://t.me/your-telegram-link" class="social-icon" target="_blank">
+                    <img src="images/telegram_2.jpeg" alt="Telegram">
+                </a>
+                <a href="https://twitter.com/your-twitter-link" class="social-icon" target="_blank">
+                    <img src="images/twitter.jpeg" alt="Twitter">
+                </a>
+            </div>
+            <a href="buy-now.html" class="buy-now-btn" target="_blank">Buy Now</a>
+        </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <div class="logo-brand">
+            <a href="#about">
+                <img src="images/logo_2.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <a href="buy-now.html" class="buy-now-btn" target="_blank">Buy Now</a>
+        <div class="menu-icon">
+            <a href="#" id="menu-toggle" onclick="toggleMenu()">☰</a>
+        </div>
+    </div>
+    
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true" aria-label="Mobile Navigation Menu">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#predmarket">Prediction Market</a></li>
+            <li><a href="#how-to-buy">How To Buy</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <!-- Socials with nested dropdown -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" onclick="toggleSocials()">Socials ▼</a>
+                <ul id="social-dropdown" class="nested-menu">
+                    <li>
+                        <a href="https://t.me/your-telegram-link" target="_blank">
+                            <img src="images/telegram_2.jpeg" alt="Telegram Logo" class="social-logo"> Telegram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/your-twitter-link" target="_blank">
+                            <img src="images/twitter.jpeg" alt="Twitter Logo" class="social-logo"> Twitter
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+    <!-- Welcome to 4Cast Market Section -->
+    <section class="hero-section" id="welcome-section">
+        <div class="hero-content">
+            <h1 class="main-title">4Cast <span class="highlight">Market</span></h1>
+            <p class="subtitle">Your Gateway to Predicting the Future</p>
+            <p class="description">4Cast Market is your platform to predict real-world events. Whether it's politics, sports, finance, or global trends, 4Cast gives you the tools to turn your predictions into rewards.</p>
+
+            <!-- Buttons -->
+            <div class="cta-buttons">
+                <!-- Link to the placeholder page for Whitepaper -->
+                <a href="whitepaper.html" class="cta-button whitepaper" target="_blank">Whitepaper</a>
+                <!-- Link to the placeholder page for Audit -->
+                <a href="audit.html" class="cta-button audit" target="_blank">Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown and Purchase Section -->
+    <section class="buy-section">
+        <h3>Buy $4Cast for Rewards!</h3>
+        <div class="countdown-container">
+            <p>Days: <span id="days">03</span></p>
+            <p>Hours: <span id="hours">02</span></p>
+            <p>Minutes: <span id="minutes">11</span></p>
+            <p>Seconds: <span id="seconds">39</span></p>
+        </div>
+
+        <div class="buy-form-container">
+            <p>1 $4Cast = $0.005</p>
+            <form class="buy-form">
+                <label for="eth">BTC you pay:</label>
+                <input type="text" id="eth" placeholder="0">
+                
+                <label for="4Cast">$4Cast you receive:</label>
+                <input type="text" id="4Cast" placeholder="0" readonly>
+                
+                <a href="buy-now.html" class="button-style" target="_blank">Buy Now</a>
+            </form>
+        </div>
+    </section>
+
+    <!-- Add this script at the bottom of your HTML to handle calculation -->
+    <script>
+        const ethInput = document.getElementById('eth');
+        const tokenOutput = document.getElementById('4Cast');
+        const conversionRate = 0.005; // 1 $4Cast = $0.005
+
+        ethInput.addEventListener('input', function() {
+            const ethValue = parseFloat(ethInput.value);
+            if (!isNaN(ethValue)) {
+                const tokens = (ethValue / conversionRate).toFixed(2);
+                tokenOutput.value = tokens;
+            } else {
+                tokenOutput.value = 0; // Default to 0 if input is invalid
+            }
+        });
+    </script>
+
+    <!-- Scrolling Brands Section -->
+    <section class="trusted-section">
+        <h3>Trusted by 1000+ Buyers</h3>
+        <div class="scrolling-logos">
+            <div class="logos">
+                <img src="images/brand1.png" alt="Brand 1">
+                <img src="images/brand2.png" alt="Brand 2">
+                <img src="images/brand3.png" alt="Brand 3">
+                <img src="images/brand4.png" alt="Brand 4">
+                <img src="images/brand5.png" alt="Brand 5">
+                <img src="images/brand6.png" alt="Brand 6">
+                <img src="images/brand7.png" alt="Brand 7">
+                <!-- Add more brands as needed -->
+            </div>
+        </div>
+    </section>
+
+<!-- JavaScript for Countdown Timer -->
+<script src="script.js" defer></script>
+
+</body>
+</html>
+
+<!-- Prediction Market Opportunity Section -->
+<section id="predmarket">
+    <div class="container">
+        <div class="opportunity-content">
+            <h2>The Prediction Market and iGaming Opportunity</h2>
+            <p>The iGaming sector is repidly expanding, with an estimated size of $70.64 billion in 2023 and estimated to grow to $153.57 billion by 2023.</p>
+            <p>We have started on azuro protocol to acquire users, but we plan to expand with a secondary peer-to-peer prediction market similar to Polymarket</p>
+            <p>At 4Cast, we are committed to expanding the range of available events and providing support for additional cryptocurrencies.</p>
+            <p>By purchasing and holding $4Cast tokens, you not only gain access to prediction markets but also share in the platform's future success.</p> 
+            <p>Token holders will receive quarterly dividends from 50% of the platform's profits, distributed in USDT, based on the getTokenHolders API snapshot taken at 00:00 on the 1st of each Quarter.</p>
+        </div>
+
+        <!-- Replace the image with a video -->
+        <div class="opportunity-video">
+            <video width="100%" autoplay loop muted>
+                <source src="videos/graph.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- Roadmap Section -->
+<section class="roadmap">
+    <h2>Roadmap – The Path to 4Cast Market</h2>
+    <p>Our roadmap outlines the steps we’ll take to deliver a world-class prediction market platform, from presale to the launch of our prediction market and beyond.</p>
+    
+    <div class="roadmap-container">
+        <div class="roadmap-stage stage-1">
+            <h3>Stage 1</h3>
+            <ul>
+                <li>Azuro Protocol Frontend Launch</li>
+                <li>Presale Site Launch</li>
+                <li>Prediction Market Development Starts</li>
+                <li>Contracts Deployed</li>
+                <li>Audit Done</li>
+                <li>Alpha Testing</li>
+                <li>Marketing and KOLs Onboarded</li>
+            </ul>
+        </div>
+        <div class="roadmap-stage stage-2">
+            <h3>Stage 2</h3>
+            <ul>
+                <li>Presale Ends</li>
+                <li>Beta Testing</li>
+                <li>4Cast Token Listing on Major Exchanges</li>
+                <li>Secondary Prediction Market Launched</li>
+                <li>Site Optimization and Bug Fixes</li>
+                <li>Launch Airdrops for Increased Usage</li>
+                <li>Develop and Launch NLP Bot for Telegram/Discord</li>
+                <li>Distribute Profits to Token Holders</li>
+            </ul>
+        </div>
+        <div class="roadmap-stage stage-3">
+            <h3>Stage 3</h3>
+            <ul>
+                <li>Start Developing Crypto Casino</li>
+                <li>Launch Casino and Lotteries</li>
+                <li>Additional Cryptocurrency Support</li>
+                <li>Continuous Marketing and KOL Program</li>
+            </ul>
+        </div>
+        <div class="roadmap-stage stage-4">
+            <h3>Stage 4</h3>
+            <ul>
+                <li>Launch Cardroom</li>
+                <li>Continuous Marketing and Lootboxes</li>
+                <li>Ongoing Airdrops and Promotions</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Whitepaper Button -->
+    <div class="button-container">
+        <a href="whitepaper-link.html" class="button-style" target="_blank">Whitepaper</a>
+    </div>
+</section>
+
+
+<!-- How to Buy 4Cast Token Section -->
+<section id="how-to-buy">
+    <section class="how-to-buy">
+        <h2>How to Buy 4Cast Token</h2>
+
+        <div class="buy-container">
+            <div class="buy-box eth-usdt">
+                <h3>Buy with BNB or USDT</h3>
+                <p>Load up your MetaMask or another wallet to swap BNB or USDT. Only purchases made by BNB will be available in your wallet immediately.</p>
+            </div>
+            <div class="buy-box bnb-poly">
+                <h3>Buy with ETH or POLY</h3>
+                <p>4Cast purchases are also available on ETH and Polygon, and will be disbursed at a later date.</p>
+            </div>
+            <div class="buy-box card">
+                <h3>Buy with Card</h3>
+                <p>Bank card purchases are welcome for $4Cast. However, tokens will be sent to your Ethereum wallet, so make sure you have one set up.</p>
+            </div>
+            <div class="buy-box wallet">
+                <h3>Add $4Cast to Wallet</h3>
+                <p>To view your tokens, add the $4Cast token address below to your wallet. Wager with $4Cast in 4Cast Market to rack up airdrop rewards!</p>
+                <div class="address-copy-container">
+                    <p id="walletAddress" class="token-address">0xA4f3B5adC7825b792f832ab199bcd9C77a647D9f</p>
+                    <button onclick="copyAddress()" class="copy-btn">
+                        <img src="images/copy-icon.png" alt="Copy" width="20px">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buy Now Button -->
+        <div class="button-container">
+            <a href="buy-now.html" class="button-style" target="_blank">Buy Now</a>
+        </div>
+    </section>
+
+    <script>
+        function copyAddress() {
+            var copyText = document.getElementById("walletAddress").textContent;
+            navigator.clipboard.writeText(copyText).then(function() {
+                alert("Address copied to clipboard!");
+            }, function(err) {
+                console.error("Could not copy text: ", err);
+            });
+        }
+    </script>
+</section>
+
+<!-- Tokenomics Section -->
+<section id="tokenomics"></section>
+    <section class="tokenomics-section">
+        <div class="tokenomics-content">
+            <h3>Tokenomics</h3>
+            <div class="presale-box token-box">Presale: 40%</div>
+            <div class="liquidity-box token-box">Liquidity: 20%</div>
+            <div class="marketing-box token-box">Marketing Wallet: 20%</div>
+            <div class="reserve-box token-box">Reserve: 10%</div>
+            <div class="developer-box token-box">Developer Wallets: 10%</div>
+
+            <!-- Transaction Tax Explanation -->
+
+        </div>
+
+        <div class="tokenomics-visual">
+            <img src="images/tokenomics.png" alt="Tokenomics Wheel">
+            <p class="total-supply">Total Supply: 1,000,000,000</p>
+            <p class="contract-address">0xA4f3B5adC7825b792f832ab199bcd9C77a647D9f</p>
+        </div>
+    </section>
+</section>
+
+<!-- 4Cast Token Holder Benefits Section -->
+<section class="holder-benefits">
+    <div class="benefits-container">
+        <!-- Image on the Left -->
+        <div class="benefits-image">
+            <img src="images/eth.jpeg" alt="4Cast Token Holder Benefits">
+        </div>
+        
+        <!-- Text on the Right -->
+        <div class="benefits-text">
+            <h3>4Cast Token Holder Benefits</h3>
+            <li>$4Cast is a utility token that enables hold-to-earn airdrop rewards to be accrued by anyone who holds $4Cast. $4Cast holders will receive a portion of the total token supply over time through rewards.</p>
+            <li>$4Cast token holders will also receive 50% of the platform's profits to be distributed to token holders every quarter through USDT transactions over Binance Smart Chain.</p>
+        </div>
+    </div>
+</section>
+
+<!-- What Sets 4Cast Apart Section -->
+<section class="forecast-apart">
+    <div class="content">
+        <h2>What Sets 4Cast Apart?</h2>
+        <p>4Cast Market is an innovative wagering platform that taps into the growing demand for wagering by centralizing all the current offerings in one place. Built to cater to a diverse range of users, 4Cast allows participants to speculate on real-world events, and will allow them to also participate in casino and cardroom offerings in the future. What sets 4Cast apart is its commitment to transparency, ease of use, and low fees, all powered by blockchain technology.</p>
+        <p>Whatever your fancy, 4Cast Market will have something for you.</p>
+    </div>
+    <div class="image-placeholder">
+        <img src="images/last.jpg" alt="Soccer Placeholder Image">
+    </div>
+</section>
+
+<script>
+    function toggleSocials() {
+        const dropdown = document.getElementById('social-dropdown');
+        dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
+
+</body>
+</html>
