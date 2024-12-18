@@ -110,3 +110,35 @@ function toggleMenu() {
     mobileMenu.setAttribute("aria-hidden", isVisible ? "true" : "false");
     mobileMenu.style.display = isVisible ? "none" : "block";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Select FAQ button and modal elements
+    const faqButton = document.querySelector('a[href="#faq"]'); // FAQ link in the nav
+    const faqModal = document.getElementById("faq-modal"); // Modal overlay
+    const closeModal = document.getElementById("close-faq"); // Close button (×)
+
+    // Check if elements exist
+    if (faqButton && faqModal && closeModal) {
+        console.log("FAQ Modal script loaded successfully!"); // Debugging log
+
+        // Show modal when FAQ button is clicked
+        faqButton.addEventListener("click", (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            faqModal.style.display = "block"; // Show modal
+        });
+
+        // Close modal when close button is clicked
+        closeModal.addEventListener("click", () => {
+            faqModal.style.display = "none"; // Hide modal
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener("click", (e) => {
+            if (e.target === faqModal) {
+                faqModal.style.display = "none"; // Hide modal
+            }
+        });
+    } else {
+        console.error("FAQ modal elements not found. Check your HTML IDs and selectors.");
+    }
+});
